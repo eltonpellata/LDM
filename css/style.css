@@ -337,7 +337,190 @@
     z-index: 5;
 }
 /*** Feature End ***/
+.model-portfolio {
+    text-align: center;
+    margin: 50px 0;
+}
 
+.model-portfolio h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+    cursor: grab;
+}
+
+.carousel-track {
+    display: inline-flex;
+    animation: scroll 30s linear infinite;
+}
+
+.carousel img {
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-right: 20px;
+}
+
+.carousel img:hover {
+    transform: scale(1.05); /* Membesarkan gambar saat di-hover */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* galeri */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+/* end galery */
+
+
+/* chat bot */
+ /* Tambahkan beberapa gaya untuk membuat chatbot terlihat modern */
+        .chatbot-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        .chatbot-header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .chatbot-messages {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+        }
+        .chatbot-message {
+            margin-bottom: 10px;
+            display: flex;
+        }
+        .chatbot-message.user {
+            justify-content: flex-end;
+        }
+        .chatbot-message.bot {
+            justify-content: flex-start;
+        }
+        .chatbot-message p {
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+        }
+        .chatbot-message.user p {
+            background-color: #007bff;
+            color: white;
+        }
+        .chatbot-message.bot p {
+            background-color: #e9ecef;
+            color: #343a40;
+        }
+        .chatbot-input-group {
+            display: flex;
+            align-items: center;
+        }
+        .chatbot-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .chatbot-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .chatbot-button:hover {
+            background-color: #0056b3;
+        }
+/* end chat bot */
+
+.auto-scroll {
+    display: flex;
+    overflow: hidden; /* Hide overflow */
+    white-space: nowrap;
+    position: relative;
+}
+
+.auto-scroll .scroll-content {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.auto-scroll img {
+    height: 200px;
+    flex-shrink: 0;
+}
 
 /*** Service Start ***/
 .service {
