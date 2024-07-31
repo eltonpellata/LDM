@@ -323,4 +323,3 @@ function getBotResponse(userQuestion) {
 
     return responses[userQuestion.toLowerCase()] || 'Maaf, saya tidak mengerti pertanyaan Anda. Silakan ajukan pertanyaan lain yang lebih spesifik.';
 }
-

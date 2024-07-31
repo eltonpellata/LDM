@@ -397,7 +397,114 @@
     }
 }
 
+/* line */
+.linetag {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+}
 
+.linetag-track, .linetag-track1 {
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+.linetag-track {
+    animation: scrollRightToLeft 20s linear infinite;
+}
+
+.linetag-track1 {
+    animation: scrollLeftToRight 20s linear infinite;
+}
+
+.linetag-track span, .linetag-track1 span {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2rem, 8vw, 6rem);
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0 10px;
+    display: inline-block;
+}
+
+.linetag-track span {
+    color: #000000;
+}
+
+.linetag-track1 span {
+    color: #ffffff;
+    -webkit-text-stroke: 1px #000000;
+    text-stroke: 1px #000000;
+    text-shadow: 
+        -1px -1px 0 #000000,
+        1px -1px 0 #000000,
+        -1px 1px 0 #000000,
+        1px 1px 0 #000000;
+}
+
+@keyframes scrollRightToLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollLeftToRight {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.linetag-track, .linetag-track1 {
+    display: flex;
+}
+
+.linetag-track span, .linetag-track1 span {
+    flex-shrink: 0;
+    padding-right: 50px; /* Adjust this value to ensure no gap between repeated text */
+}
+
+.linetag::before, .linetag::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    z-index: 2;
+}
+
+.linetag::before {
+    left: 0;
+    background: linear-gradient(to right, #fff, transparent);
+}
+
+.linetag::after {
+    right: 0;
+    background: linear-gradient(to left, #fff, transparent);
+}
+
+@media (max-width: 768px) {
+    .linetag {
+        margin: 10px 0;
+    }
+    
+    .linetag-track span, .linetag-track1 span {
+        padding: 0 5px;
+    }
+    
+    .linetag::before, .linetag::after {
+        width: 30px;
+    }
+}
+
+
+/* line */
 /* galeri */
 .gallery-item {
     position: relative;
