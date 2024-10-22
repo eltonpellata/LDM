@@ -290,36 +290,72 @@ function handleUserMessage() {
         displayMessage(botResponse, 'bot');
     }, 1000); // Delay 1 detik untuk efek real-time
 }
-
-function displayMessage(message, sender) {
-    var messageContainer = document.createElement('div');
-    messageContainer.className = 'chatbot-message ' + sender;
-
-    var messageContent = document.createElement('p');
-    if (sender === 'bot') {
-        messageContent.innerHTML = message; // Use innerHTML for bot messages to render HTML links
-    } else {
-        messageContent.textContent = message;
+function redirectToWhatsApp(phoneNumber) {
+    // Pastikan nomor telepon tidak dimulai dengan '0'
+    if (phoneNumber.startsWith('0')) {
+        // Ganti angka pertama '0' dengan kode negara Indonesia '62'
+        phoneNumber = '62' + phoneNumber.slice(1);
     }
 
-    messageContainer.appendChild(messageContent);
-    document.getElementById('chatbotMessages').appendChild(messageContainer);
-
-    // Scroll ke bawah
-    var messagesDiv = document.getElementById('chatbotMessages');
-    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    // Buat link WhatsApp
+    let url = `https://wa.me/${phoneNumber}`;
+    
+    // Arahkan pengguna ke WhatsApp
+    window.location.href = url;
 }
 
-function getBotResponse(userQuestion) {
-    // Jawaban bot sederhana berdasarkan input pengguna
-    var responses = {
-        'halo': 'Halo! Ada yang bisa saya bantu?',
-        'hello': 'Hello! Ada yang bisa saya bantu?',
-        'saya mau bertanya soal paket': 'baik, silakan klik tautan berikut untuk langsung menghubungi admin kami di WhatsApp: <a href="https://wa.me/085243836364" target="_blank">085243836364</a>',
-        'paket': 'baik, silakan klik tautan berikut untuk langsung menghubungi admin kami di WhatsApp: <a href="https://wa.me/085243836364" target="_blank">085243836364</a>',
+function sendWhatsAppMessage(packageName) {
+    var phoneNumber = '6289509563739'; // Ganti dengan nomor WhatsApp yang ingin dihubungi
+
+    var message = '';
+    if (packageName === 'CUAN TIPIS') {
+        message = `Haii, saya tertarik dengan paket CUAN TIPIS:\n- Harga: IDR 800K (Diskon dari 1jt)\n- 5 Desain Feed Instagram (Carousel maksimal 2 slide per desain)\n- 1 Konten Video IG Reels per bulan : Durasi 30 detik + Caption Konten (AIDA)\n- Admin Posting\n- Revisi Desain: 1 kali (Revisi minor)`;
+    } else if (packageName === 'DOMPET AMAN') {
+        message = `Haii, saya tertarik dengan paket DOMPET AMAN:\n- Harga: 1jt (Diskon dari 1,2jt)\n- 10 Desain Feed Instagram\n- 3 Desain Story Instagram\n- 1 Konten Video IG Reels per bulan : Durasi 30 detik + Caption Konten (AIDA)\n- Admin Posting\n- Revisi Desain: 1 kali\n- FREE IKLAN PAID PROMOTE: IDR 25k/Project`;
+    } else if (packageName === 'SAKU SANTAI') {
+        message = `Haii, saya tertarik dengan paket SAKU SANTAI:\n- Harga: 1,5jt (Diskon dari 2jt)\n- 20 Desain Feed Instagram (Carousel maksimal 4 slide per desain)\n- 5 Desain Story Instagram\n- 2 Konten Video IG Reels per bulan\n- Copywriting Konten (AIDA)\n- Admin Posting\n- Revisi Desain: 2 kali\n- FREE IKLAN PAID PROMOTE: IDR 50k/Project`;
+    } else if (packageName === 'BADAI CUAN') {
+        message = `Haii, saya tertarik dengan paket BADAI CUAN:\n- Harga: 3,5jt (Diskon dari 5jt)\n- 15 Desain Feed Instagram\n- 15 Video Reels + Tiktok per bulan\n- Admin Posting IG dan TikTok\n- Story Setiap Hari\n- Copywriting Untuk Setiap Konten/Caption\n- FREE IKLAN PAID PROMOTE: IDR 100k/Project`;
+    }
+
+    // Encode the message to be URL-safe
+    var encodedMessage = encodeURIComponent(message);
+
+    // Redirect to WhatsApp with the encoded message
+    var whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.location.href = whatsappUrl;
+}
+
+
+// function displayMessage(message, sender) {
+//     var messageContainer = document.createElement('div');
+//     messageContainer.className = 'chatbot-message ' + sender;
+
+//     var messageContent = document.createElement('p');
+//     if (sender === 'bot') {
+//         messageContent.innerHTML = message; // Use innerHTML for bot messages to render HTML links
+//     } else {
+//         messageContent.textContent = message;
+//     }
+
+//     messageContainer.appendChild(messageContent);
+//     document.getElementById('chatbotMessages').appendChild(messageContainer);
+
+//     // Scroll ke bawah
+//     var messagesDiv = document.getElementById('chatbotMessages');
+//     messagesDiv.scrollTop = messagesDiv.scrollHeight;
+// }
+
+// function getBotResponse(userQuestion) {
+//     // Jawaban bot sederhana berdasarkan input pengguna
+//     var responses = {
+//         'halo': 'Halo! Ada yang bisa saya bantu?',
+//         'hello': 'Hello! Ada yang bisa saya bantu?',
+//         'saya mau bertanya soal paket': 'baik, silakan klik tautan berikut untuk langsung menghubungi admin kami di WhatsApp: <a href="https://wa.me/085243836364" target="_blank">085243836364</a>',
+//         'paket': 'baik, silakan klik tautan berikut untuk langsung menghubungi admin kami di WhatsApp: <a href="https://wa.me/085243836364" target="_blank">085243836364</a>',
 
  
-    };
+//     };
 
-    return responses[userQuestion.toLowerCase()] || 'Maaf, saya tidak mengerti pertanyaan Anda. Silakan ajukan pertanyaan lain yang lebih spesifik.';
-}
+//     return responses[userQuestion.toLowerCase()] || 'Maaf, saya tidak mengerti pertanyaan Anda. Silakan ajukan pertanyaan lain yang lebih spesifik.';
+// }

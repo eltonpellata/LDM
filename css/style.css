@@ -173,7 +173,7 @@
     opacity: 1;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 720px) {
     .navbar .nav-item .dropdown-menu {
     display: block;
     visibility: hidden;
@@ -188,7 +188,7 @@
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 720px) {
     .navbar.navbar-expand-lg .navbar-toggler {
         padding: 8px 15px;
         border: 1px solid #fff;
@@ -354,7 +354,7 @@
 /*** Feature End ***/
 .model-portfolio {
     text-align: center;
-    margin: 50px 0;
+    margin: -20px 0;
 }
 
 .model-portfolio h1 {
@@ -489,9 +489,14 @@
     background: linear-gradient(to left, #fff, transparent);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
+    .model-portfolio {
+        margin-bottom: 10px; /* Atur jarak bawah untuk perangkat mobile */
+        padding: 0; /* Menghilangkan padding jika ada */
+    }
+
     .linetag {
-        margin: 10px 0;
+        margin: 0; /* Menghilangkan margin pada linetag */
     }
     
     .linetag-track span, .linetag-track1 span {
