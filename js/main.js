@@ -327,37 +327,3 @@ function sendWhatsAppMessage(packageName) {
 }
 
 
-// function displayMessage(message, sender) {
-//     var messageContainer = document.createElement('div');
-//     messageContainer.className = 'chatbot-message ' + sender;
-
-//     var messageContent = document.createElement('p');
-//     if (sender === 'bot') {
-//         messageContent.innerHTML = message; // Use innerHTML for bot messages to render HTML links
-//     } else {
-//         messageContent.textContent = message;
-//     }
-
-//     messageContainer.appendChild(messageContent);
-//     document.getElementById('chatbotMessages').appendChild(messageContainer);
-
-//     // Scroll ke bawah
-//     var messagesDiv = document.getElementById('chatbotMessages');
-//     messagesDiv.scrollTop = messagesDiv.scrollHeight;
-// }
-
-// function getBotResponse(userQuestion) {
-//     // Jawaban bot sederhana berdasarkan input pengguna
-//     var responses = {
-//         'halo': 'Halo! Ada yang bisa saya bantu?',
-//         'hello': 'Hello! Ada yang bisa saya bantu?',
-//         'saya mau bertanya soal paket': 'baik, silakan klik tautan berikut untuk langsung menghubungi admin kami di WhatsApp: <a href="https://wa.me/085243836364" target="_blank">085243836364</a>',
-//         'paket': 'baik, silakan klik tautan berikut untuk langsung menghubungi admin kami di WhatsApp: <a href="https://wa.me/085243836364" target="_blank">085243836364</a>',
-
- 
-//     };
-
-//     return responses[userQuestion.toLowerCase()] || 'Maaf, saya tidak mengerti pertanyaan Anda. Silakan ajukan pertanyaan lain yang lebih spesifik.';
-// }
-// videoHandler.js
-
