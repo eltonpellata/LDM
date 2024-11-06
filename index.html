@@ -97,10 +97,29 @@
         <!-- Carousel Start -->
         <div class="header-carousel owl-carousel">
             <div class="header-carousel-item">
-                <div class="video-container" id="topVideoContainer">
+                <div id="videoContainer">
                     <video id="video7" src="img/video/video7.mp4" class="img-fluid w-100" autoplay muted loop playsinline></video>
                     <video id="videohp1" src="img/video/videohp1.mp4" class="img-fluid w-100" autoplay muted loop playsinline style="display: none;"></video>
                 </div>
+
+                <script>
+                    function updateVideo() {
+                        const video7 = document.getElementById('video7');
+                        const videohp1 = document.getElementById('videohp1');
+                        if (window.innerWidth < 768) { // Ukuran layar ponsel
+                            video7.style.display = 'none';
+                            videohp1.style.display = 'block';
+                        } else { // Ukuran layar laptop
+                            video7.style.display = 'block';
+                            videohp1.style.display = 'none';
+                        }
+                    }
+
+                    // Panggil fungsi saat halaman dimuat
+                    window.onload = updateVideo;
+                    // Panggil fungsi saat ukuran jendela diubah
+                    window.onresize = updateVideo;
+                </script>
 
                 <div class="carousel-caption">
                     <div class="container align-items-center py-4">
@@ -120,11 +139,8 @@
                 </div>
             </div>
             <div class="header-carousel-item">
-                <div class="video-container" id="bottomVideoContainer">
-                    <video id="video10Bottom" src="img/video/video10.mp4" class="img-fluid w-100" autoplay muted loop playsinline></video>
-                    <video id="videohp2.mp4Bottom" src="img/video/videohp2.mp4" class="img-fluid w-100" autoplay muted loop playsinline style="display: none;"></video>
-                </div>
-                
+                <video src="img/video/video10.mp4" class="img-fluid w-100" autoplay muted loop playsinline></video>
+                <video src="img/video/videohp2.mp4" class="img-fluid w-100" autoplay muted loop playsinline></video>
                 <!-- <img src="img/portofolio/img_ (4).jpg" class="img-fluid w-100" alt="Image"> -->
                 <div class="carousel-caption">
                     <div class="container py-4">
@@ -695,31 +711,6 @@
   </script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script>
-        function updateVideos() {
-            const video7 = document.getElementById('video7');
-            const videohp1= document.getElementById('videohp1.mp4');
-            const video10Bottom = document.getElementById('video10Bottom');
-            const videohp2Bottom = document.getElementById('videohp2Bottom');
-    
-            if (window.innerWidth < 635) { // Ukuran layar ponsel
-                video7.style.display = 'none';
-                videohp1.style.display = 'block';
-                video10Bottom.style.display = 'none';
-                videohp2Bottom.style.display = 'block';
-            } else { // Ukuran layar laptop
-                video7.style.display = 'block';
-                videohp1.style.display = 'none';
-                video10Bottom.style.display = 'block';
-                videohp2Bottom.style.display = 'none';
-            }
-        }
-    
-        // Panggil fungsi saat halaman dimuat
-        window.onload = updateVideos;
-        // Panggil fungsi saat ukuran jendela diubah
-        window.onresize = updateVideos;
-    </script>
     </body>
 
 </html>
