@@ -325,5 +325,3 @@ function sendWhatsAppMessage(packageName) {
     var whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     window.location.href = whatsappUrl;
 }
-
-
