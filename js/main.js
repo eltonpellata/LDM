@@ -305,17 +305,17 @@ function redirectToWhatsApp(phoneNumber) {
 }
 
 function sendWhatsAppMessage(packageName) {
-    var phoneNumber = '6289509563739'; // Ganti dengan nomor WhatsApp yang ingin dihubungi
+    var phoneNumber = '6285372107774'; // Ganti dengan nomor WhatsApp yang ingin dihubungi
 
     var message = '';
-    if (packageName === 'CUAN TIPIS') {
-        message = `Haii, saya tertarik dengan paket CUAN TIPIS:\n- Harga: IDR 800K (Diskon dari 1jt)\n- 5 Desain Feed Instagram (Carousel maksimal 2 slide per desain)\n- 1 Konten Video IG Reels per bulan : Durasi 30 detik + Caption Konten (AIDA)\n- Admin Posting\n- Revisi Desain: 1 kali (Revisi minor)`;
-    } else if (packageName === 'DOMPET AMAN') {
-        message = `Haii, saya tertarik dengan paket DOMPET AMAN:\n- Harga: 1jt (Diskon dari 1,2jt)\n- 10 Desain Feed Instagram\n- 3 Desain Story Instagram\n- 1 Konten Video IG Reels per bulan : Durasi 30 detik + Caption Konten (AIDA)\n- Admin Posting\n- Revisi Desain: 1 kali\n- FREE IKLAN PAID PROMOTE: IDR 25k/Project`;
-    } else if (packageName === 'SAKU SANTAI') {
-        message = `Haii, saya tertarik dengan paket SAKU SANTAI:\n- Harga: 1,5jt (Diskon dari 2jt)\n- 20 Desain Feed Instagram (Carousel maksimal 4 slide per desain)\n- 5 Desain Story Instagram\n- 2 Konten Video IG Reels per bulan\n- Copywriting Konten (AIDA)\n- Admin Posting\n- Revisi Desain: 2 kali\n- FREE IKLAN PAID PROMOTE: IDR 50k/Project`;
-    } else if (packageName === 'BADAI CUAN') {
-        message = `Haii, saya tertarik dengan paket BADAI CUAN:\n- Harga: 3,5jt (Diskon dari 5jt)\n- 15 Desain Feed Instagram\n- 15 Video Reels + Tiktok per bulan\n- Admin Posting IG dan TikTok\n- Story Setiap Hari\n- Copywriting Untuk Setiap Konten/Caption\n- FREE IKLAN PAID PROMOTE: IDR 100k/Project`;
+    if (packageName === 'Paket Starter Custom') {
+        message = `Haii, saya tertarik dengan paket Paket Starter Custom:\n- Harga: IDR 1jt (Diskon dari 1,5jt)\n- Desain feed (5 desain, carousel maksimal 2 slide)\n- Desain story (2 desain)\n- 1 konten reels\n- Copywriting konten/caption (menggunakan metode AIDA)\n- Admin posting\n- Laporan bulanan\n- 1 kali revisi minor per desain`;
+    } else if (packageName === 'Paket Custom') {
+        message = `Haii, saya tertarik dengan paket Paket Custom:\n- Harga: 1,5jt (Diskon dari 2jt)\n- Desain feed (5 desain, carousel maksimal 2 slide)\n- Desain story (2 desain)\n- 3 konten video IG Reels/bulan (30 detik)\n- Copywriting konten/caption (menggunakan metode AIDA)\n- Admin posting\n- Laporan bulanan\n- 1 kali revisi minor per desain`;
+    } else if (packageName === 'Paket Standard') {
+        message = `Haii, saya tertarik dengan paket Paket Standard:\n- Harga: 3,5jt (Diskon dari 4jt)\n- Konsep, ide & materi lengkap dari tim\n- 15 desain feed\n- 5 desain story\n- 10 konten IG Reels/bulan\n- Copywriting konten/caption (menggunakan metode AIDA)\n- Video IG Reels 30-60 detik\n- Admin posting\n- Laporan bulanan\n- Iklan Paid Promote IDR 75k/project`;
+    } else if (packageName === 'Paket Pro') {
+        message = `Haii, saya tertarik dengan paket Paket Pro:\n- Harga: 4jt (Diskon dari 4,5jt)\n- Konsep, ide & materi lengkap dari tim\n- 20 desain feed\n- 10 desain story\n- 10 konten IG Reels/bulan\n- Copywriting konten/caption (menggunakan metode AIDA)\n- Video IG Reels 30-60 detik\n- Admin posting\n- Laporan bulanan\n- Iklan Paid Promote IDR 100k/project`;
     }
 
     // Encode the message to be URL-safe
